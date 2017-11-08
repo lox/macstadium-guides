@@ -1,17 +1,14 @@
-# How to use Macstadium's Private Cloud for Continuous Integration for macOS or iOS projects
+# How to use MacStadium's Private Cloud for Continuous Integration for macOS or iOS projects
 
-In this article, we'll get started with setting up a Macstadium Private Cloud to run builds for your macOS or iOS project. We'll be using a [Private Cloud](https://www.macstadium.com/cloud/), which is powered by VMWare on dedicated Mac hardware.
-
-
-
+In this article, we'll get started with setting up a MacStadium Private Cloud to run builds for your macOS or iOS project. We'll be using a [Private Cloud](https://www.macstadium.com/cloud/), which is powered by VMWare on dedicated Mac hardware.
 
 Continuous Integration (CI) is a term in modern development for ensuring that your code passes a series of tests (integration tests, historically) on every code check-in. This means having a central point where your code can be checked and have the results reported back to you. This allows teams to iterate rapidly and collaborate on their Source Code Management (SCM) platform of choice (e.g Github, Gitlab or Bitbucket).
 
-In the Linux world, CI is easier than the Mac world, as there are tools like Docker to provide isolated runtime environments for repeatable tests. In the Mac world, this is harder, as there aren't native containerization tools. We do however have virtualization tools, like VMWare (see [What's the difference between containers and virtual machines]() for more details). This means that on top of Macstadium's physical Mac hosts, we can create several virtual macOS machines and use them as targets for running our tests on.
+In the Linux world, CI is easier than the Mac world, as there are tools like Docker to provide isolated runtime environments for repeatable tests. In the Mac world, this is harder, as there aren't native containerization tools. We do however have virtualization tools, like VMWare (see [What's the difference between containers and virtual machines]() for more details). This means that on top of MacStadium's physical Mac hosts, we can create several virtual macOS machines and use them as targets for running our tests on.
 
 ## Choosing a Plan
 
-Virtualization means you can run more than one virtual host per physical machine, which means you are dividing up the resources of a single host into several. This means you need to choose the amount of physical machines you need based on how many concurrent builds you want to do. The more concurrent builds you do, the less time developers are waiting for builds. Beyond concurrency, you will need to run a virtual machine for each version of macOS that you are targetting.
+Virtualization means you can run more than one virtual host per physical machine, which means you are dividing up the resources of a single host into several. This means you need to choose the amount of physical machines you need based on how many concurrent builds you want to do. The more concurrent builds you do, the less time developers are waiting for builds. Beyond concurrency, you will need to run a virtual machine for each version of macOS that you are targeting.
 
 A good rule of thumb is 2-3 virtual machines per physical host.
 
@@ -21,7 +18,7 @@ To get started:
 1. Choose the data center closest to you
 1. Choose "Start Trial" and create an account
 
-Macstadium will provision your new environment and email you at the account you nominated. Typically this takes 2-3 working days.
+MacStadium will provision your new environment and email you at the account you nominated. Typically this takes 2-3 working days.
 
 ## Connecting to Your Cloud
 
@@ -166,8 +163,6 @@ bundle exec fastlane test
 This should run the unit tests and some integration tests. Congratulations, you have a working build environment!
 
 ## Next Steps
-
-
 
 
 [Buildkite]: https://buildkite.com/
