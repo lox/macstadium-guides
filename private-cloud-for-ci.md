@@ -4,7 +4,7 @@ In this article, we'll get started with setting up a MacStadium Private Cloud to
 
 Continuous Integration (CI) is a term in modern development for ensuring that your code passes a series of tests (integration tests, historically) on every code check-in. This means having a central point where your code can be checked and have the results reported back to you. This allows teams to iterate rapidly and collaborate on their Source Code Management (SCM) platform of choice (e.g Github, Gitlab or Bitbucket).
 
-In the Linux world, CI is easier than the Mac world, as there are tools like Docker to provide isolated runtime environments for repeatable tests. In the Mac world, this is harder, as there aren't native containerization tools. We do however have virtualization tools, like VMware (see [What's the difference between containers and virtual machines][] for more details). This means that on top of MacStadium's physical Mac hosts, we can create several virtual macOS machines and use them as targets for running our tests on.
+In the Linux world, CI is easier than the Mac world, as there are tools like Docker to provide isolated runtime environments for repeatable tests. In the Mac world, this is harder, as there aren't native containerization tools. We do however have virtualization tools, like VMware (see [What's the difference between containers and virtual machines](#whats-the-difference-between-containers-and-virtual-machines) for more details). This means that on top of MacStadium's physical Mac hosts, we can create several virtual macOS machines and use them as targets for running our tests on.
 
 ## Choosing a Plan
 
@@ -160,7 +160,6 @@ sudo xcode-select -s /Applications/Xcode.app
 ```
 
 ## Run a Fastlane Test Build
-
 Now you have a working Xcode environment! Next up we will test that we can run automated builds on it, using [Fastlane][] and a demo application from [Buildkite][].
 
 ```bash
@@ -184,7 +183,7 @@ From that point you can create new VM's from that template.
 ## Manage your macOS builds with Buildkite
 
 Buildkite is a service that provides orchestration for managing your builds. It connects to Github, Gitlab or Bitbucket and will trigger a build when you push changes to that service. The builds run on the hardware you provide via a software agent. You can easily install the agent on the VM we created above. See https://buildkite.com/docs/agent/osx.
-s
+
 ## FAQ
 
 ### What's the difference between containers and virtual machines?
