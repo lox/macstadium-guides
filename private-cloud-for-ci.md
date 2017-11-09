@@ -6,9 +6,25 @@ Continuous Integration (CI) is a term in modern development for ensuring that yo
 
 In the Linux world, CI is easier than the Mac world, as there are tools like Docker to provide isolated runtime environments for repeatable tests. In the Mac world, this is harder, as there aren't native containerization tools. We do however have virtualization tools, like VMware (see [What's the difference between containers and virtual machines](#whats-the-difference-between-containers-and-virtual-machines) for more details). This means that on top of MacStadium's physical Mac hosts, we can create several virtual macOS machines and use them as targets for running our tests on.
 
-## Choosing a Plan
+## In this guide...
+- [How to use MacStadium's Private Cloud for Continuous Integration for macOS or iOS projects](#how-to-use-macstadiums-private-cloud-for-continuous-integration-for-macos-or-ios-projects)
+    - [In this guide...](#in-this-guide)
+    - [Choosing a Plan](#choosing-a-plan)
+    - [Connecting to Your Cloud](#connecting-to-your-cloud)
+    - [Connecting to vSphere Web Client](#connecting-to-vsphere-web-client)
+    - [Creating a Virtual Machine](#creating-a-virtual-machine)
+    - [Installing macOS](#installing-macos)
+    - [Install VMware Guest Tools](#install-vmware-guest-tools)
+    - [Installing Build Tools](#installing-build-tools)
+        - [Install Homebrew](#install-homebrew)
+        - [Install XCode](#install-xcode)
+    - [Run a Fastlane Test Build](#run-a-fastlane-test-build)
+    - [Next Steps](#next-steps)
+    - [Manage your macOS builds with Buildkite](#manage-your-macos-builds-with-buildkite)
+    - [FAQ](#faq)
+        - [What's the difference between containers and virtual machines?](#whats-the-difference-between-containers-and-virtual-machines)
 
-![Choose a plan that suits your needs](screenshots/private-cloud-for-ci/01-customize-your-cloud.png)
+## Choosing a Plan
 
 Virtualization means you can run more than one virtual host per physical machine, which means you are dividing up the resources of a single host into several. This means you need to choose the amount of physical machines you need based on how many concurrent builds you want to do. The more concurrent builds you do, the less time developers are waiting for builds. Beyond concurrency, you will need to run a virtual machine for each version of macOS that you are targeting.
 
@@ -19,6 +35,8 @@ To get started:
 1. Pick the plan that suits you: https://www.macstadium.com/cloud/
 1. Choose the data center closest to you
 1. Choose "Start Trial" and create an account
+
+![Choose a plan that suits your needs](screenshots/private-cloud-for-ci/01-customize-your-cloud.png)
 
 MacStadium will provision your new environment and email you at the account you nominated. Typically this takes 2-3 working days.
 
